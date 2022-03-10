@@ -14,6 +14,8 @@
             rel="stylesheet"
             href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 <body>
 <section class="root">
     <div class="navbar">
@@ -21,10 +23,10 @@
             <div class="navTop">
                 <div class="nav_logo">LOGO</div>
                 <ul class="navContainer">
-                    <li class="navs selected"><i class="fas fa-search" id="categories"></i> <span>Categories</span></li>
-                    <li class="navs"><i class="fas fa-search" id="findWork"></i> <span>Find Work</span></li>
-                    <li class="navs"><i class="far fa-bookmark" id="bookmark"></i> <span>Bookmark</span></li>
-                    <li class="navs"><i class="fal fa-envelope" id="guidance"></i> <span>Guidance</span></li>
+                    <li class="navs selected" id="categories"><i class="fas fa-search"></i> <span>Categories</span></li>
+                    <li class="navs" id="findWork"><i class="fas fa-search"></i> <span>Find Work</span></li>
+                    <li class="navs" id="bookmark"><i class="far fa-bookmark"></i> <span>Bookmark</span></li>
+                    <li class="navs" id="guidance"><i class="fal fa-envelope"></i> <span>Guidance</span></li>
                 </ul>
             </div>
 
@@ -52,7 +54,7 @@
             <div class="hc_heading">Here, we <span>found</span> your job!</div>
         </div>
     </div>
-    <div class="categoryContainer" style="display: none">
+    <div class="categoryContainer">
         <div class="categoryCard">
             <svg width="33" height="28" viewBox="0 0 33 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M26.2897 2.30249H6.7103C4.11495 2.30249 2 4.30563 2 6.76377V16.219C2 18.6827 4.11495 20.6803 6.7103 20.6803H15.1818V22.8055H12.276C11.5495 22.8055 10.9578 23.3659 10.9578 24.054C10.9578 24.7421 11.5495 25.3025 12.276 25.3025H20.724C21.4505 25.3025 22.0422 24.7421 22.0422 24.054C22.0422 23.3659 21.4505 22.8055 20.724 22.8055H17.8182V20.6803H26.2897C28.8909 20.6803 31 18.6772 31 16.219V6.76377C31 4.30563 28.885 2.30249 26.2897 2.30249ZM6.7103 4.79947H26.2838C27.4321 4.79947 28.3636 5.68174 28.3636 6.76377V13.2226H4.63636V6.76377C4.63636 5.68174 5.56788 4.79947 6.7103 4.79947ZM26.2897 18.1889H6.7103C5.56788 18.1889 4.63636 17.3066 4.63636 16.2246V15.7252H28.3636V16.2246C28.3636 17.3066 27.4321 18.1889 26.2897 18.1889Z"
@@ -179,7 +181,6 @@
                 </svg>
             </div>
         </div>
-
     </div>
 
     <!--    site2-->
@@ -226,9 +227,9 @@
             <div class="fwc_bookmark">
                 <span>
                     <svg width="49" height="56" viewBox="0 0 49 56" fill="none"
-                                                 xmlns="http://www.w3.org/2000/svg">
+                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M35.1711 5.59998H13.8289C13.0206 5.60102 12.2456 5.96951 11.674 6.62461C11.1025 7.27971 10.7809 8.16792 10.78 9.09438V47.5328C10.78 47.8447 10.8529 48.1509 10.991 48.4196C11.1291 48.6883 11.3275 48.9098 11.5655 49.061C11.8035 49.2121 12.0725 49.2876 12.3445 49.2794C12.6165 49.2712 12.8817 49.1797 13.1124 49.0144L24.4987 40.8572L35.8876 49.0144C36.1184 49.1797 36.3835 49.2712 36.6556 49.2794C36.9276 49.2876 37.1966 49.2121 37.4346 49.061C37.6726 48.9098 37.871 48.6883 38.0091 48.4196C38.1472 48.1509 38.22 47.8447 38.22 47.5328V9.09438C38.2191 8.16792 37.8976 7.27971 37.326 6.62461C36.7544 5.96951 35.9795 5.60102 35.1711 5.59998ZM35.1711 44.3806L25.3065 37.3151C25.0642 37.1416 24.7842 37.0496 24.4985 37.0496C24.2128 37.0496 23.9328 37.1416 23.6905 37.3151L13.8289 44.3804V9.09438H35.1711V44.3806Z"
-          fill="#6083FE"/>
+                              fill="#6083FE"/>
                     </svg>
                 </span>
             </div>
@@ -275,7 +276,7 @@
             <div class="fwc_bookmark"><span><svg width="49" height="56" viewBox="0 0 49 56" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
         <path d="M35.1711 5.59998H13.8289C13.0206 5.60102 12.2456 5.96951 11.674 6.62461C11.1025 7.27971 10.7809 8.16792 10.78 9.09438V47.5328C10.78 47.8447 10.8529 48.1509 10.991 48.4196C11.1291 48.6883 11.3275 48.9098 11.5655 49.061C11.8035 49.2121 12.0725 49.2876 12.3445 49.2794C12.6165 49.2712 12.8817 49.1797 13.1124 49.0144L24.4987 40.8572L35.8876 49.0144C36.1184 49.1797 36.3835 49.2712 36.6556 49.2794C36.9276 49.2876 37.1966 49.2121 37.4346 49.061C37.6726 48.9098 37.871 48.6883 38.0091 48.4196C38.1472 48.1509 38.22 47.8447 38.22 47.5328V9.09438C38.2191 8.16792 37.8976 7.27971 37.326 6.62461C36.7544 5.96951 35.9795 5.60102 35.1711 5.59998ZM35.1711 44.3806L25.3065 37.3151C25.0642 37.1416 24.7842 37.0496 24.4985 37.0496C24.2128 37.0496 23.9328 37.1416 23.6905 37.3151L13.8289 44.3804V9.09438H35.1711V44.3806Z"
-          fill="#6083FE"/>
+              fill="#6083FE"/>
         </svg>
         </span></div>
 
@@ -322,7 +323,7 @@
             <div class="fwc_bookmark"><span><svg width="49" height="56" viewBox="0 0 49 56" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
         <path d="M35.1711 5.59998H13.8289C13.0206 5.60102 12.2456 5.96951 11.674 6.62461C11.1025 7.27971 10.7809 8.16792 10.78 9.09438V47.5328C10.78 47.8447 10.8529 48.1509 10.991 48.4196C11.1291 48.6883 11.3275 48.9098 11.5655 49.061C11.8035 49.2121 12.0725 49.2876 12.3445 49.2794C12.6165 49.2712 12.8817 49.1797 13.1124 49.0144L24.4987 40.8572L35.8876 49.0144C36.1184 49.1797 36.3835 49.2712 36.6556 49.2794C36.9276 49.2876 37.1966 49.2121 37.4346 49.061C37.6726 48.9098 37.871 48.6883 38.0091 48.4196C38.1472 48.1509 38.22 47.8447 38.22 47.5328V9.09438C38.2191 8.16792 37.8976 7.27971 37.326 6.62461C36.7544 5.96951 35.9795 5.60102 35.1711 5.59998ZM35.1711 44.3806L25.3065 37.3151C25.0642 37.1416 24.7842 37.0496 24.4985 37.0496C24.2128 37.0496 23.9328 37.1416 23.6905 37.3151L13.8289 44.3804V9.09438H35.1711V44.3806Z"
-          fill="#6083FE"/>
+              fill="#6083FE"/>
         </svg>
         </span></div>
 
@@ -369,7 +370,7 @@
             <div class="fwc_bookmark"><span><svg width="49" height="56" viewBox="0 0 49 56" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
         <path d="M35.1711 5.59998H13.8289C13.0206 5.60102 12.2456 5.96951 11.674 6.62461C11.1025 7.27971 10.7809 8.16792 10.78 9.09438V47.5328C10.78 47.8447 10.8529 48.1509 10.991 48.4196C11.1291 48.6883 11.3275 48.9098 11.5655 49.061C11.8035 49.2121 12.0725 49.2876 12.3445 49.2794C12.6165 49.2712 12.8817 49.1797 13.1124 49.0144L24.4987 40.8572L35.8876 49.0144C36.1184 49.1797 36.3835 49.2712 36.6556 49.2794C36.9276 49.2876 37.1966 49.2121 37.4346 49.061C37.6726 48.9098 37.871 48.6883 38.0091 48.4196C38.1472 48.1509 38.22 47.8447 38.22 47.5328V9.09438C38.2191 8.16792 37.8976 7.27971 37.326 6.62461C36.7544 5.96951 35.9795 5.60102 35.1711 5.59998ZM35.1711 44.3806L25.3065 37.3151C25.0642 37.1416 24.7842 37.0496 24.4985 37.0496C24.2128 37.0496 23.9328 37.1416 23.6905 37.3151L13.8289 44.3804V9.09438H35.1711V44.3806Z"
-          fill="#6083FE"/>
+              fill="#6083FE"/>
         </svg>
         </span></div>
 
@@ -416,19 +417,14 @@
             <div class="fwc_bookmark"><span><svg width="49" height="56" viewBox="0 0 49 56" fill="none"
                                                  xmlns="http://www.w3.org/2000/svg">
         <path d="M35.1711 5.59998H13.8289C13.0206 5.60102 12.2456 5.96951 11.674 6.62461C11.1025 7.27971 10.7809 8.16792 10.78 9.09438V47.5328C10.78 47.8447 10.8529 48.1509 10.991 48.4196C11.1291 48.6883 11.3275 48.9098 11.5655 49.061C11.8035 49.2121 12.0725 49.2876 12.3445 49.2794C12.6165 49.2712 12.8817 49.1797 13.1124 49.0144L24.4987 40.8572L35.8876 49.0144C36.1184 49.1797 36.3835 49.2712 36.6556 49.2794C36.9276 49.2876 37.1966 49.2121 37.4346 49.061C37.6726 48.9098 37.871 48.6883 38.0091 48.4196C38.1472 48.1509 38.22 47.8447 38.22 47.5328V9.09438C38.2191 8.16792 37.8976 7.27971 37.326 6.62461C36.7544 5.96951 35.9795 5.60102 35.1711 5.59998ZM35.1711 44.3806L25.3065 37.3151C25.0642 37.1416 24.7842 37.0496 24.4985 37.0496C24.2128 37.0496 23.9328 37.1416 23.6905 37.3151L13.8289 44.3804V9.09438H35.1711V44.3806Z"
-          fill="#6083FE"/>
+              fill="#6083FE"/>
         </svg>
         </span></div>
 
         </div>
-
     </div>
-
-
     <!--    site3-->
-
-
-    <div class="bookmarkContainer">
+    <div class="bookmarkContainer" style="display: none">
         <div class="matchSection">
             <div class="m_line"></div>
             <div class="matchContainer">
@@ -645,7 +641,7 @@
         <div class="matchSection">
             <div class="m_line"></div>
             <div class="matchContainer">
-                <span>100%</span> match!
+                <span>75%</span> match!
             </div>
         </div>
         <div class="swiper">
@@ -857,7 +853,7 @@
         <div class="matchSection">
             <div class="m_line"></div>
             <div class="matchContainer">
-                <span>100%</span> match!
+                <span>50%</span> match!
             </div>
         </div>
         <div class="swiper">
@@ -1070,7 +1066,7 @@
     </div>
     <div class="jobDescription">
         <!--        fwcStyle-->
-        <div class="exRight ">
+        <div class="exRight">
             <div class="exRightContainer">
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg"
                      class="h_bell">
@@ -1169,9 +1165,40 @@
         spaceBetween: 20,
     });
 </script>
-<script src="./script.js"></script>
+<!--<script src="./script.js"></script>-->
 <script>
-    
+    $('.navs').on('click', function () {
+        $(".navs").removeClass('selected');
+
+        console.log("cleicked")
+        $(this).addClass('selected')
+        console.log(this.id)
+        if (this.id === 'categories') {
+            $(".exRight").removeClass('fwcStyle');
+            $('.fwc').css('display', 'none');
+
+            $('.bookmarkContainer').css('display', 'none');
+            $('.findWorkContainer').css('display', 'none');
+            $('.categoryContainer').removeAttr('style');
+        } else if (this.id === 'bookmark') {
+            $(".exRight").removeClass('fwcStyle');
+            $('.fwc').css('display', 'none');
+
+
+            $('.findWorkContainer').css('display', 'none');
+            $('.bookmarkContainer').removeAttr('style');
+            $('.categoryContainer').css('display', 'none');
+        } else if (this.id === 'findWork') {
+            $('.exRight').addClass('fwcStyle');
+            $('.fwc').removeAttr('style');
+
+            $('.bookmarkContainer').css('display', 'none');
+            $('.findWorkContainer').removeAttr('style');
+            $('.categoryContainer').css('display', 'none');
+        }
+    })
+
+
 </script>
 </body>
 </html>
