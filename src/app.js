@@ -4,6 +4,7 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const { env } = require("process");
+const routerPath = path.join(__dirname, "./routers/userRoutes.js");
 
 const envPath = path.join(__dirname, "./config.env");
 dotenv.config({ path: envPath });
@@ -14,14 +15,34 @@ const DB = process.env.DATABASE.replace(
 );
 
 const userSchema = new mongoose.Schema({
-  username: {
+  firstName: {
     type: String,
-    unique: true,
-    required: [true, "Please enter UserName"],
+    required: [true, "Please enter FirstName"],
+  },
+  lastName: {
+    type: String,
+    default: null,
+  },
+  dob: {
+    type: Date,
+    required: [true, "Please enter Date of Birth"],
+  },
+  placeOfBirth: {
+    type: String,
+    default: null,
+  },
+  educationalQualifications: {
+    type: String,
+    default: null,
+  },
+  PWE: {
+    type: String,
+    default: null,
   },
   email: {
     type: String,
     required: [true, "Please enter email"],
+    unique: true,
   },
   password: {
     type: String,
@@ -73,6 +94,13 @@ app.use(express.static(publicDirectoryPath));
 app.get("/", (req, res) => {
   res.render("index", {
     title: "Rozgaar",
+    name: "The B Team",
+  });
+});
+
+app.get("/compare", (req, res) => {
+  res.render("compare", {
+    title: "categories",
     name: "The B Team",
   });
 });
