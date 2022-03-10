@@ -91,7 +91,7 @@
   transition: all 500ms linear;
 }
 
-.navs:first-child:before {
+.selected:before {
   content: "";
   position: absolute;
   left: 0;
